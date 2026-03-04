@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(252, 237, 251, 0.6), rgba(252, 237, 251, 0.6)),
+    url("imagesche.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 60px;
+}
+
+
+
+.contenedor {
+    background: transparent !important;
+    text-align: center;
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  gap: 20px; /* espacio entre imagen y texto */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+.contenedor img {
+  width: 170px;
+  height: auto;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    color: #FFD700;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 0;
+    font-weight: normal;
+    color: palevioletred;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 0; 
+    font-weight: normal;
+    color: #FFD700;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: palevioletred;
+}
+
+   .menu-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: pink; /* más opaco para que se vea */
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+
+/* Quita la barra fea en algunos navegadores */
+.menu-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-scroll a {
+    text-decoration: none;
+    color: pink;
+    font-weight: bold;
+    padding: 10px 15px;
+    background: rgb(255, 0, 238);
+    border-radius: 20px;
+    flex: 0 0 auto; /* evita que se compriman */
+}
+
+.menu-scroll button {
+    border: none;
+    background: rgb(252, 237, 251);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.menu-scroll button:hover {
+    background: #e27db5;
+}
+
+.seccion {
+    padding: 40px 20px;
+    display: none;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap; /* permite que bajen */
+    gap: 20px;
+}
+
+.card {
+    color: rgb(252, 237, 251);
+    background: rgb(115, 62, 62);
+    padding: 15px;
+    border-radius: 40px;
+    border: 5px solid rgb(190, 102, 102);
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#carrito {
+  position: sticky;
+top: 80px;
+right: 20px;
+  cursor: grab
+}
+
+#carrito li {
+    transition: transform 0.2s;
+  color: pink !important;
+  -webkit-text-stroke: 1px rgb(209, 189, 5);
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animar-carrito {
+  animation: pop 0.3s ease;
+}
+
+@keyframes agregarAnimacion {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.animar-producto {
+  animation: agregarAnimacion 0.3s ease;
+}
+
+.personalizacion {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgb(252, 237, 251); /* color de fondo del input */
+  color: rgb(100, 0, 100);             /* color del texto dentro del input */
+  font-size: 14px;
+}
+
+.card .personalizacion {
+  width: 100%;
+  padding: 5px 10px;
+  margin-top: 5px;          /* separa del título y precio */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgb(252, 237, 251);
+  color: rgb(100, 0, 100);
+  font-size: 14px;
+}
+
+.animando {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
